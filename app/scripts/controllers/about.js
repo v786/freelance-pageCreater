@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name eventCreaterApp.controller:AboutCtrl
+ * @name eventCreatorApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the eventCreaterApp
+ * Controller of the eventCreatorApp
  */
-angular.module('eventCreaterApp')
+angular.module('eventCreatorApp')
   .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

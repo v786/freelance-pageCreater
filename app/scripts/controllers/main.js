@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name eventCreaterApp.controller:MainCtrl
+ * @name eventCreatorApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the eventCreaterApp
+ * Controller of the eventCreatorApp
  */
-angular.module('eventCreaterApp')
-  .controller('MainCtrl', function ($scope) {
+angular.module('eventCreatorApp')
+  .controller('MainCtrl', function ($scope, $location) {
     this.ArrayGenerator = function(Lower, Upper, Postfix){
       var Arr = [];
       for (var j=Lower ; j<=Upper ; j++){
@@ -33,6 +33,11 @@ angular.module('eventCreaterApp')
         return false ; // for smaller screen
       }
     };
+
+    $scope.save = function(){
+      console.log('main saved');
+      $location.path('/designer');
+    }
 
 
   });

@@ -10,29 +10,44 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="styles/angular-datepicker.css">
+    <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog.css">
+    <link rel="stylesheet" href="bower_components/ng-dialog/css/ngDialog-theme-default.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/froala_editor.min.css" />
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/froala_style.min.css" />
+
+    <!-- Include Froala Editor Plugins styles -->
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/char_counter.css">
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/colors.css">
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/emoticons.css">
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/image_manager.css">
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/image.css">
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/line_breaker.css">
+    <link rel="stylesheet" href="bower_components/froala-wysiwyg-editor/css/plugins/table.css">
+
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="eventCreaterApp">
+  <body ng-app="eventCreatorApp" class="coloredBackground">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
+    <div class="header WhiteBackground">
       <div class="brandLogo">
         <a href="http://www.joinmyevent.com/" target="_blank">
-          <img ng-src="images/joinmyeventLogo.png" class="img-responsive">
+          <div class="container">
+            <img ng-src="images/joinmyeventLogo.png" class="img-responsive">
+          </div>
         </a>
       </div>
     </div>
 
-    <div class="container">
     <div ng-view=""></div>
-    </div>
 
     <div class="footer">
       <div class="container">
@@ -51,6 +66,30 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/moment/min/moment-with-locales.min.js"></script>
     <script src="scripts/angular-datepicker.js"></script>
+    <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
+    <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/froala_editor.min.js"></script>
+    <script src="scripts/vendor/froala.js"></script>
+    <script src="bower_components/ngImageEditor/dist/ngImageEditor.js"></script>
+    <script src="bower_components/angular-base64-upload/dist/angular-base64-upload.js"></script>
+
+    <!-- Include Froala Editor Plugins -->
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/align.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/char_counter.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/colors.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/emoticons.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/entities.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/font_family.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/font_size.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/image.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/line_breaker.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/link.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/lists.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/paragraph_format.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/paragraph_style.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/quote.min.js"></script>
+    <script src="bower_components/froala-wysiwyg-editor/js/plugins/table.min.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -58,6 +97,9 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/designer.js"></script>
+        <script src="scripts/controllers/richtext.js"></script>
+        <script src="scripts/controllers/imageeditor.js"></script>
         <!-- endbuild -->
 </body>
 </html>

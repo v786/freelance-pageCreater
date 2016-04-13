@@ -1,0 +1,97 @@
+<div class="container WhiteBackground">
+  <div ng-controller="DesignerCtrl" >
+    <div class="row" ng-cloak>
+      <section>
+        <img class="img-responsive EventBannerImage" ng-src="{{BannerImage||'images/dummyBg.png'}}" ng-click="showImageEditor()">
+        <div class="transparencyLayer FirstBannerText">
+          <span class="bannerText">My Event</span>
+        </div>
+      </section>
+      <!-- Tab bar ~~IMPORTANT~~ changes should be copied to buy.html also -->
+      <section class="navigation">
+        <div class="col-md-2 StateButton active" ng-class="{active:region.active=='event'}" ng-click="region.setActive('event')">
+          Event Details
+        </div>
+        <div class="col-md-2 StateButton" ng-class="{active:region.active=='buy'}" ng-click="region.setActive('buy')">
+          Buy Tickets
+        </div>
+        <div class="col-md-8 text-right EventOrganiserContainer hidden-xs hidden-sm">
+          <section class="eventTextWrapper">
+            <span class="EventOrganiser">Event Organised By</span>
+            <br>
+          <span class="eventText EventOrganiserValue Edit" ng-click="ShowOrganiserDetails();">
+            <strong>{{organiser.manager}}</strong>
+          </span>
+          </section>
+        </div>
+        <div class="col-xs-12 EventOrganiserContainer hidden-md hidden-lg">
+          <section class="eventTextWrapper">
+            <span class="EventOrganiser">Event Organised By</span>
+            <br>
+          <span class="eventText EventOrganiserValue Edit" ng-click="ShowOrganiserDetails();">
+            <strong>{{organiser.manager}}</strong>
+          </span>
+          </section>
+        </div>
+      </section>
+
+      <!-- Tab bar Ends -->
+
+      <div class="col-md-12" style="padding: 25px; background-color:white">
+        <div class="row">
+          <!-- main description -->
+          <div class="col-md-9">
+            <div ng-if="!showRichTextEditor">
+              <div style="float: right" class="Edit btn btn-default" ng-click="ShowTextEditor()">
+                <li class="fa fa-edit"></li> EDIT</div>
+              <div ng-bind-html="event.description()"></div>
+            </div>
+            <div ng-if="showRichTextEditor">
+              <div class="Edit btn btn-default" ng-click="HideTextEditor()">
+                <li class="fa fa-save"></li> Stop Editing and Save</div>
+              <br>
+              <br>
+              <textarea froala="froalaOptions" ng-model="event.htmlContent"></textarea>
+            </div>
+          </div>
+          <!-- main description Ends -->
+
+          <!-- side floating boxes -->
+          <div class="col-md-3">
+            <section>
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  Date  & Time
+                  <span style="float: right" ng-click="" class="Edit"><li class="fa fa-edit"></li></span>
+                </div>
+                <div class="panel-body">
+                  <i class="fa fa-calendar"></i>
+                  <span>{{event.eventDate}}</span>
+                  <br>
+                  <i class="fa fa-clock-o"></i>
+                  <span>{{event.eventTime}}</span>
+                </div>
+              </div>
+            </section>
+            <section>
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  Location
+                  <span style="float: right" ng-click="" class="Edit"><li class="fa fa-edit"></li></span>
+                </div>
+                <div class="panel-body">
+                  <i class="fa fa-map-marker"></i> &nbsp;
+                  {{event.address}}
+                  <hr>
+                  <button class="btn btn-default btn-block" ng-click="ShowOnMaps()">Show on map</button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <!-- side floating boxes -->
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="ImageEditor" ng-controller="ImageeditorCtrl">
+  <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand">Select Image that should appear on your home page !</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <form class="navbar-form navbar-right">
+            <input type="file" class="btn btn-default navbar-btn form-control"
+                   ng-model='UserImage' base-sixty-four-input ng-change="changeLogger()">
+            <button class="btn btn-default navbar-btn" ng-click="saveImage()">Save</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="row">
+      <div class="col-md-3"><label>Width</label>
+        <input type="number" ng-model="selected.width" class="form-control"></div>
+      <div class="col-md-3"><label>Height</label>
+        <input type="number" ng-model="selected.height" class="form-control" ></div>
+      <div class="col-md-3"><label>Aspect-ratio</label>
+        <input type="number" ng-disabled="true" placeholder="{{aspectRatioX}}:{{aspectRatioY}}" class="form-control" ></div>
+      <div class="col-md-3"><label>Crop Selection</label>
+        <button class="btn btn-primary btn-block" ng-click="capture()" ng-disabled="!enabled">capture</button>
+      </div>
+
+    </div>
+    <hr>
+    <div class="row">
+      <section>
+
+        <div on-img-change="onImageChange(imgSize)"
+             class="ng-image-editor" selected="selected"
+             img-src="imgSrc" ng-image-editor="imageEditor"
+             ng-init="
+                  selected={width:900,height:315,top:0,left:0};
+                  aspectRatioX= 900;
+                  aspectRatioY=315"
+             enabled-resize-selector="enabledResizeSelector"
+             aspect-ratio="{{aspectRatioX+':'+aspectRatioY}}" >
+        </div>
+        <div class="clear"></div>
+        <br />
+
+      </section>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  .ng-image-editor {
+    width:100%;
+  }
+  .ng-image-editor {
+    float:left;
+  }
+</style>

@@ -2,18 +2,23 @@
 
 /**
  * @ngdoc overview
- * @name eventCreaterApp
+ * @name eventCreator
  * @description
- * # eventCreaterApp
+ * # eventCreatorApp
  *
  * Main module of the application.
  */
 angular
-  .module('eventCreaterApp', [
+  .module('eventCreatorApp', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'datePicker'
+    'datePicker',
+    'ngMap',
+    'ngDialog',
+    'froala',
+      'ngImageEditor',
+    'naif.base64'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -26,6 +31,16 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/designer', {
+        templateUrl: 'views/designer.html',
+        controller: 'DesignerCtrl',
+        controllerAs: 'designer'
+      })
+      .when('/imageEditor', {
+        templateUrl: 'views/imageeditor.html',
+        controller: 'ImageeditorCtrl',
+        controllerAs: 'imageEditor'
       })
       .otherwise({
         redirectTo: '/'
