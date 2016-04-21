@@ -12,7 +12,6 @@
     "ngmap": "^1.16.7",
     "font-awesome": "^4.5.0",
     "ng-dialog": "^0.5.9",
-    "froala-wysiwyg-editor": "^2.2.3",
     "angular-touch": "^1.5.3",
     "ngImageEditor": "^0.2.1",
     "angular-base64-upload": "^0.1.19",
@@ -34,6 +33,6 @@
     }
   },
   "resolutions": {
-    "angular": "^1.2.10"
+    "angular": "^1.5.5"
   }
 }
