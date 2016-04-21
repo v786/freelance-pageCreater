@@ -43,7 +43,7 @@ angular.module('eventCreatorApp')
     $scope.HideTextEditor = function () {
       $scope.showRichTextEditor = false ;
     };
-    $scope.froalaOptions = {
+    $scope.CkeditorOptions = {
       toolbarBottom:true,
       toolbarButtons: ['fullscreen', 'bold', 'italic','|',
         'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|',

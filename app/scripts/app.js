@@ -16,8 +16,8 @@ angular
     'datePicker',
     'ngMap',
     'ngDialog',
-    'froala',
-      'ngImageEditor',
+    'ngCkeditor',
+    'ngImageEditor',
     'naif.base64'
   ])
   .config(function ($routeProvider) {
